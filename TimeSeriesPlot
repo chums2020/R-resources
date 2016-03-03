@@ -1,0 +1,10 @@
+y <- data.frame(data1)
+t <- data.frame(seq(as.Date("2005/1/31"), as.Date("2015/12/31"), "month"))
+
+describe(y[,2])
+
+#Look at axis.Date in particular
+plot(t, y[,2]/1000, type = "o", xaxt="n", yaxt="n",  xlab="", ylab="")
+title(main = "Passenger vehicle unit sold in Taiwan", xlab=list("Month",cex=1),ylab=list("Unit (in thousand)",cex=1))
+axis(2, at=seq(5,65,length = 13))
+axis.Date(1, at = seq(as.Date("2005/1/31"), max(as.Date("2015/12/31")), "years"))
