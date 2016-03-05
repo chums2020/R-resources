@@ -7,4 +7,4 @@ TimeSeriesPlot
   2. Plot multiple time series with na.approx, as.yearmon{zoo}
   3. Interpolation with td{tempdisagg}
   4. Implement ridge regression
-  5. Implment time series cross validation
+  5. Implment time series cross validation (Reference: http://robjhyndman.com/hyndsight/tscvexample/) 
