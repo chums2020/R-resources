@@ -6,10 +6,10 @@ shinyUI(fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-      helpText("Select a stock to examine. 
-        Information will be collected from yahoo finance."),
+      helpText("Type a stock symbol.
+        Information will be collected from Yahoo Finance."),
     
-      textInput("symb", "Symbol", "SPY"),
+      textInput("symb", "Symbol", "YHOO"),
     
       dateRangeInput("dates", 
         "Date range",
@@ -23,7 +23,7 @@ shinyUI(fluidPage(
         value = FALSE),
       
       checkboxInput("adjust", 
-        "Adjust prices for inflation", value = FALSE)
+        "Adjust prices for inflation", value = TRUE)
     ),
     
     mainPanel(plotOutput("plot"))
