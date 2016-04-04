@@ -1,3 +1,6 @@
+#Downloaded from http://shiny.rstudio.com/tutorial/lesson6/
+#Date: 2016/4/3
+
 if (!exists(".inflation")) {
   .inflation <- getSymbols('CPIAUCNS', src = 'FRED', 
      auto.assign = FALSE)
