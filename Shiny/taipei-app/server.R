@@ -9,8 +9,7 @@ url = "http://data.ntpc.gov.tw/od/data/api/A97AEE33-4109-457B-9FB1-DB754A0BB100?
 
 shinyServer(function(input, output) {
   jsonData <- fromJSON(url)
-  jsonData$startdata <- as.Date(jsonData$startdata)
-  jsonData$enddata <- as.Date(jsonData$enddata)
+  names(jsonData) <- c("公告機關","活動類型","開始時間","結束時間","活動名稱","網址","細節","公佈日期")
   
   activityInput <- reactive({
     switch(input$type,
