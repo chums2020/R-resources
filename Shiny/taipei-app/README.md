@@ -6,7 +6,7 @@ This web application uses the real-time data from New Taipei City Government Ope
 
 Users can create interactive tables that display cultural event information by users' choices.
 
-Areas to be solved/strenghtened:
+To be solved/strenghtened:
 
 1. Encoding problem on Windows machine  
 2. Activate URL links
