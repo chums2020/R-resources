@@ -9,8 +9,8 @@ shinyUI(fluidPage(
       
       radioButtons("type", label = h3("Please choose the type of activities you are interested in."),
                    choices = list("Cultural Events Promotion", "exhibition info","Exhibition and Performing Arts", "call for submission/application",
-                                  "ticket/registration", "street artist", "community", "cultural development", "null"),
-                   selected = "null"),
+                                  "ticket/registration", "street artist", "community", "cultural development", "all"),
+                   selected = "all"),
       
       dateInput("date", 
                 label = h3("Please choose the date of your trip."), 
