@@ -16,7 +16,7 @@ shinyServer(function(input, output) {
     dataInput()
   })
   output$plot <- renderPlot({
-    chartSeries(adjust_dataInput(), theme = chartTheme("white"), 
+    chartSeries(adjust_dataInput(), theme = chartTheme("white"), name = "Stock Price Time Series", 
       type = "line", log.scale = input$log, TA = NULL)
   })
   
