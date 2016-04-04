@@ -1,4 +1,4 @@
-Language: Shiny by RStudio
+Shiny by RStudio
 
 If you run this application on Windows, please be awared of default encoding system. (see http://shiny.rstudio.com/articles/unicode.html) 
 
