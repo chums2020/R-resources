@@ -17,15 +17,15 @@ shinyServer(function(input, output) {
 
   activityInput <- reactive({
     switch(input$type,
-           "Cultural Events Promotion" = which(jsonData$type =="藝文推廣"),
-           "exhibition info" = which(jsonData$type == "展覽訊息"),
-           "Exhibition and Performing Arts"= which(jsonData$type =="藝術展演"),
-           "call for submission/application"= which(jsonData$type == "徵件/比賽/申請"),
-           "ticket/registration"= which(jsonData$type =="索票/報名"),
-           "street artist"= which(jsonData$type =="街頭藝人"),
-           "community"= which(jsonData$type =="社區營造"),
-           "cultural development"= which(jsonData$type =="文化發展"),
-           "all"= seq(1,dim(jsonData)[1])
+           "藝文推廣" = which(jsonData$type =="藝文推廣"),
+           "展覽訊息" = which(jsonData$type == "展覽訊息"),
+           "藝術展演"= which(jsonData$type =="藝術展演"),
+           "徵件/比賽/申請"= which(jsonData$type == "徵件/比賽/申請"),
+           "索票/報名"= which(jsonData$type =="索票/報名"),
+           "街頭藝人"= which(jsonData$type =="街頭藝人"),
+           "社區營造"= which(jsonData$type =="社區營造"),
+           "文化發展"= which(jsonData$type =="文化發展"),
+           "全部"= seq(1,dim(jsonData)[1])
     )
   })
   
