@@ -1,10 +1,10 @@
 Shiny by RStudio
 
-If you run this application on Windows, please be awared of default encoding system. (see http://shiny.rstudio.com/articles/unicode.html) 
-
 This web application uses the real-time data from New Taipei City Government Open Data Platform. 
 
 Users can create interactive tables that display cultural event information by users' choices.
+
+If you run this application on Windows, please be awared of default encoding system. (see http://shiny.rstudio.com/articles/unicode.html) 
 
 To be solved/strenghtened:
 
