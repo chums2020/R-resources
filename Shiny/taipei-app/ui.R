@@ -24,7 +24,7 @@ shinyUI(fluidPage(
     ),
     
     mainPanel(
-      tableOutput('table')
+       DT::dataTableOutput('table')
       
     )
   )
