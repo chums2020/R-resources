@@ -28,19 +28,13 @@ shinyServer(function(input, output) {
            "全部"= seq(1,dim(jsonData)[1])
     )
   })
-  
-  adjust_dateInput <- reactive({
-    if (input$period){
-      return(seq.Date(as.Date(input$date)-7, as.Date(input$date)+7, by = "day"))
-    }
-    as.Date(input$date)
-  })
+
   
   
   output$table <- DT::renderDataTable({
     jsonData <- jsonData[activityInput(),1:7]
-    jsonData <- jsonData[which(as.Date(jsonData$startdata) < max(adjust_dateInput())),]
-    jsonData <- jsonData[which(as.Date(jsonData$enddata) > min(adjust_dateInput())),]
+    jsonData <- jsonData[which(as.Date(jsonData$startdata) < as.Date(input$dates[2])),]
+    jsonData <- jsonData[which(as.Date(jsonData$enddata) > as.Date(input$dates[1])),]    
     names(jsonData) <- c("公告機關","活動類型","開始時間","結束時間","活動名稱","網址","細節")
     jsonData <-data.frame(jsonData)
     DT::datatable(jsonData,rownames = FALSE, escape =FALSE)
