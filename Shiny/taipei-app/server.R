@@ -7,14 +7,14 @@
 #transform startdata, enddata
 
 
-
 library(jsonlite)
 library(curl)
+library(DT)
 url = "http://data.ntpc.gov.tw/od/data/api/A97AEE33-4109-457B-9FB1-DB754A0BB100?$format=json"
 
 shinyServer(function(input, output) {
   jsonData <- fromJSON(url)
-
+  jsonData[,6] <- paste0("<a href='",jsonData[,6],"'target='_blank'>",jsonData[,6],"</a>")
   activityInput <- reactive({
     switch(input$type,
            "藝文推廣" = which(jsonData$type =="藝文推廣"),
@@ -37,13 +37,12 @@ shinyServer(function(input, output) {
   })
   
   
-  output$table <- renderTable({
+  output$table <- DT::renderDataTable({
     jsonData <- jsonData[activityInput(),1:7]
     jsonData <- jsonData[which(as.Date(jsonData$startdata) < max(adjust_dateInput())),]
     jsonData <- jsonData[which(as.Date(jsonData$enddata) > min(adjust_dateInput())),]
     names(jsonData) <- c("公告機關","活動類型","開始時間","結束時間","活動名稱","網址","細節")
     jsonData <-data.frame(jsonData)
-  }, 
-  include.rownames=FALSE)
+    DT::datatable(jsonData,rownames = FALSE, escape =FALSE)
+  })
 })
-
