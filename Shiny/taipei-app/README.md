@@ -1,6 +1,6 @@
 Shiny by RStudio
 
-This web application uses the real-time data from New Taipei City Government Open Data Platform. 
+This web application uses the real-time data from New Taipei City Government Open Data Platform. It is currently hosted on Shinyapps.io: [link](https://yingtinglin.shinyapps.io/taipei-app/)
 
 Users can create interactive tables that display cultural event information by users' choices.
 
